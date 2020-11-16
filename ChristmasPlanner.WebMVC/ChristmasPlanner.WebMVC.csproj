@@ -170,11 +170,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -235,6 +235,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Person\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +253,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChristmasPlanner.Data\ChristmasPlanner.Data.csproj">
+      <Project>{F0EB87EA-90C2-43E0-86B9-BBC7CB7483A4}</Project>
+      <Name>ChristmasPlanner.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChristmasPlanner.Models\ChristmasPlanner.Models.csproj">
+      <Project>{3f7a0a4a-2ba4-4b19-9494-0d3a3d9f75d7}</Project>
+      <Name>ChristmasPlanner.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChristmasPlanner.Services\ChristmasPlanner.Services.csproj">
+      <Project>{c90a6ae2-beb7-49f1-884f-bc04d8d79c78}</Project>
+      <Name>ChristmasPlanner.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

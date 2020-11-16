@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasPlanner.WebMVC", "ChristmasPlanner.WebMVC\ChristmasPlanner.WebMVC.csproj", "{63C6915B-D4F9-4C38-9571-79CD016E717B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasPlanner.Data", "ChristmasPlanner.Data\ChristmasPlanner.Data.csproj", "{F0EB87EA-90C2-43E0-86B9-BBC7CB7483A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasPlanner.Models", "ChristmasPlanner.Models\ChristmasPlanner.Models.csproj", "{3F7A0A4A-2BA4-4B19-9494-0D3A3D9F75D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasPlanner.Services", "ChristmasPlanner.Services\ChristmasPlanner.Services.csproj", "{C90A6AE2-BEB7-49F1-884F-BC04D8D79C78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{63C6915B-D4F9-4C38-9571-79CD016E717B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63C6915B-D4F9-4C38-9571-79CD016E717B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63C6915B-D4F9-4C38-9571-79CD016E717B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0EB87EA-90C2-43E0-86B9-BBC7CB7483A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0EB87EA-90C2-43E0-86B9-BBC7CB7483A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0EB87EA-90C2-43E0-86B9-BBC7CB7483A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0EB87EA-90C2-43E0-86B9-BBC7CB7483A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F7A0A4A-2BA4-4B19-9494-0D3A3D9F75D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F7A0A4A-2BA4-4B19-9494-0D3A3D9F75D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F7A0A4A-2BA4-4B19-9494-0D3A3D9F75D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F7A0A4A-2BA4-4B19-9494-0D3A3D9F75D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C90A6AE2-BEB7-49F1-884F-BC04D8D79C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C90A6AE2-BEB7-49F1-884F-BC04D8D79C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C90A6AE2-BEB7-49F1-884F-BC04D8D79C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C90A6AE2-BEB7-49F1-884F-BC04D8D79C78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
