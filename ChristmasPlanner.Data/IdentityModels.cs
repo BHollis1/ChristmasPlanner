@@ -33,6 +33,8 @@ namespace ChristmasPlanner.Data
         }
 
         public DbSet<Person> Person { get; set; }
+        public DbSet<Gift> Gifts { get; set; }
+        public DbSet<Card> Cards { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

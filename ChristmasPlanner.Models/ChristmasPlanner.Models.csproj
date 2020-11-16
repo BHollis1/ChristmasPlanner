@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GiftCreate.cs" />
+    <Compile Include="GiftListItem.cs" />
     <Compile Include="PersonCreate.cs" />
     <Compile Include="PersonListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
