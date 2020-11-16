@@ -46,12 +46,31 @@ namespace ChristmasPlanner.Services
                         e =>
                         new PersonListItem
                         {
-                            PersonID = e.ID,
+                            PersonID = e.PersonID,
                             FirstName = e.FirstName,
                             LastName = e.LastName,
                             FullName = e.FullName
                         });
                 return query.ToArray();
+            }
+        }
+
+        public PersonDetail GetPersonByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Person
+                    .Single(e => e.PersonID == id && e.OwnerID == _userID);
+                return
+                    new PersonDetail
+                    {
+                        PersonID = entity.PersonID,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
+                        FullName = entity.FullName
+                    };
             }
         }
     }

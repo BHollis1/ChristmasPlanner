@@ -5,19 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChristmasPlanner.Data
+namespace ChristmasPlanner.Models
 {
-    public class Person
+    public class PersonDetail
     {
-        [Key]
         public int PersonID { get; set; }
-        [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
-        [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        [Required]
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
-        [Required]
-        public Guid OwnerID { get; set; }
     }
 }

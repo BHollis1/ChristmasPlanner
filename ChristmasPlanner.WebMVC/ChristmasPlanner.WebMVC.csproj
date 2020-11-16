@@ -240,6 +240,7 @@
     <Content Include="Views\Person\Create.cshtml" />
     <Content Include="Views\Gift\Index.cshtml" />
     <Content Include="Views\Gift\Create.cshtml" />
+    <Content Include="Views\Person\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

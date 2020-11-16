@@ -45,7 +45,7 @@ namespace ChristmasPlanner.Services
                         e =>
                         new GiftListItem
                         {
-                            GiftID = e.ID,
+                            GiftID = e.GiftID,
                             Description = e.Description,
                             BoughtGift = e.BoughtGift,
                             PersonID = e.PersonID
@@ -53,4 +53,5 @@ namespace ChristmasPlanner.Services
                 return query.ToArray();
             }
         }
+    }
 }

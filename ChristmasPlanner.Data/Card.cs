@@ -11,13 +11,13 @@ namespace ChristmasPlanner.Data
     public class Card
     {
         [Key]
-        public int ID { get; set; }
+        public int CardID { get; set; }
         [Required]
         public Guid OwnerID { get; set; }
         [Required]
         public bool SentCard { get; set; }
-        [ForeignKey(nameof(PersonID))]
         public int PersonID { get; set; }
+        [ForeignKey(nameof(PersonID))]
         public virtual Person Person { get; set; }
     }
 }
