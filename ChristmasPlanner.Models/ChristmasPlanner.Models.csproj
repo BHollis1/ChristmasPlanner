@@ -58,6 +58,7 @@
     <Compile Include="GiftListItem.cs" />
     <Compile Include="PersonCreate.cs" />
     <Compile Include="PersonDetail.cs" />
+    <Compile Include="PersonEdit.cs" />
     <Compile Include="PersonListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

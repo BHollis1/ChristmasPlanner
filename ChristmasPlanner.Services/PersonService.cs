@@ -73,5 +73,22 @@ namespace ChristmasPlanner.Services
                     };
             }
         }
+
+        public bool UpdatePerson(PersonEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Person
+                    .Single(e => e.PersonID == model.PersonID && e.OwnerID == _userID);
+
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.FullName = model.FullName;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

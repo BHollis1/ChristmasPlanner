@@ -59,5 +59,43 @@ namespace ChristmasPlanner.WebMVC.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreatePersonService();
+            var detail = service.GetPersonByID(id);
+            var model =
+                new PersonEdit
+                {
+                    PersonID = detail.PersonID,
+                    FirstName = detail.FirstName,
+                    LastName = detail.LastName,
+                    FullName = detail.FullName
+                };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, PersonEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.PersonID != id)
+            {
+                ModelState.AddModelError("", "Id mismatch");
+                return View(model);
+            }
+
+            var service = CreatePersonService();
+
+            if (service.UpdatePerson(model))
+            {
+                TempData["SaveResult"] = "Person was updated";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Person could not be saved");
+            return View(model);
+        }
     }
 }
