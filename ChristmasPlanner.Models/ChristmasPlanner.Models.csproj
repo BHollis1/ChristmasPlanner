@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardCreate.cs" />
+    <Compile Include="CardDetail.cs" />
+    <Compile Include="CardEdit.cs" />
+    <Compile Include="CardListItem.cs" />
     <Compile Include="GiftCreate.cs" />
     <Compile Include="GiftDetail.cs" />
     <Compile Include="GiftEdit.cs" />
