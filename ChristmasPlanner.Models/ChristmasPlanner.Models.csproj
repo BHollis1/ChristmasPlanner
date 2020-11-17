@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GiftCreate.cs" />
+    <Compile Include="GiftDetail.cs" />
+    <Compile Include="GiftEdit.cs" />
     <Compile Include="GiftListItem.cs" />
     <Compile Include="PersonCreate.cs" />
     <Compile Include="PersonDetail.cs" />

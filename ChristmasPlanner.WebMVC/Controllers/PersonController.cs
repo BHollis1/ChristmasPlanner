@@ -97,5 +97,28 @@ namespace ChristmasPlanner.WebMVC.Controllers
             ModelState.AddModelError("", "Person could not be saved");
             return View(model);
         }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreatePersonService();
+            var model = svc.GetPersonByID(id);
+
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult DeletePerson(int id)
+        {
+            var service = CreatePersonService();
+
+            service.DeletePerson(id);
+
+            TempData["SaveResult"] = "Person was deleted";
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

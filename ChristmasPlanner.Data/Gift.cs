@@ -21,6 +21,7 @@ namespace ChristmasPlanner.Data
         public int PersonID { get; set; }
         [ForeignKey(nameof(PersonID))]
         public virtual Person Person { get; set; }
+        
 
     }
 }

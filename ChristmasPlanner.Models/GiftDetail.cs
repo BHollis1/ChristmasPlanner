@@ -7,17 +7,13 @@ using System.Threading.Tasks;
 
 namespace ChristmasPlanner.Models
 {
-    public class GiftListItem
+    public class GiftDetail
     {
-        
         public int GiftID { get; set; }
-        [Required]
         public string Description { get; set; }
-        [Required]
+        
         [Display(Name = "Bought Gift")]
-       
         public bool BoughtGift { get; set; }
         public int PersonID { get; set; }
-
     }
 }

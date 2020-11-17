@@ -90,5 +90,20 @@ namespace ChristmasPlanner.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeletePerson(int personID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Person
+                    .Single(e => e.PersonID == personID && e.OwnerID == _userID);
+
+                ctx.Person.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

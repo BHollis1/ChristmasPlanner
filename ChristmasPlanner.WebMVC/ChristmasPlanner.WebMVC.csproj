@@ -242,6 +242,10 @@
     <Content Include="Views\Gift\Create.cshtml" />
     <Content Include="Views\Person\Details.cshtml" />
     <Content Include="Views\Person\Edit.cshtml" />
+    <Content Include="Views\Person\Delete.cshtml" />
+    <Content Include="Views\Gift\Details.cshtml" />
+    <Content Include="Views\Gift\Edit.cshtml" />
+    <Content Include="Views\Gift\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

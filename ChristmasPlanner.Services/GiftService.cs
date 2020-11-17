@@ -24,7 +24,8 @@ namespace ChristmasPlanner.Services
                 {
                     OwnerID = _userID,
                     Description = model.Description,
-                    BoughtGift = model.BoughtGift
+                    BoughtGift = model.BoughtGift,
+                    PersonID = model.PersonID
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -53,5 +54,56 @@ namespace ChristmasPlanner.Services
                 return query.ToArray();
             }
         }
+        public GiftDetail GetGiftByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Gifts
+                    .Single(e => e.GiftID == id && e.OwnerID == _userID);
+                return
+                    new GiftDetail
+                    {
+                        GiftID = entity.GiftID,
+                        Description = entity.Description,
+                        BoughtGift = entity.BoughtGift,
+                        PersonID = entity.PersonID
+                    };
+            }
+        }
+
+        public bool UpdateGift(GiftEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Gifts
+                    .Single(e => e.GiftID == model.GiftID && e.OwnerID == _userID);
+
+                entity.Description = model.Description;
+                entity.BoughtGift = model.BoughtGift;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteGift(int giftID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Gifts
+                    .Single(e => e.GiftID == giftID && e.OwnerID == _userID);
+
+                ctx.Gifts.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
+    
+

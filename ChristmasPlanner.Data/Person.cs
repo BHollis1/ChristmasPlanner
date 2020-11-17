@@ -19,5 +19,7 @@ namespace ChristmasPlanner.Data
         public string FullName { get; set; }
         [Required]
         public Guid OwnerID { get; set; }
+        public virtual ICollection<Gift> Gifts { get; set; } = new List<Gift>();
+        public virtual ICollection<Card> Cards { get; set; } = new List<Card>();
     }
 }

@@ -11,7 +11,9 @@ namespace ChristmasPlanner.Models
     {
         [MaxLength(200, ErrorMessage = "Too many characters. Please enter less than 200 characters")]
         public string Description { get; set; }
+       
         public bool BoughtGift { get; set; }
+        public int PersonID { get; set; }
 
     }
 }
