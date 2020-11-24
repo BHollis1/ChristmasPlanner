@@ -4,60 +4,68 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+        <style type="text/css">
+            .actionlink {
+                font-size: larger;
+                font-weight: bold;
+                color: darkred;
+            }
+        </style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
+        <h2>Index</h2>
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
+        <p>
+            @Html.ActionLink("Create New", "Create", null, new { @class = " actionlink" })
+        </p>
+        @if (TempData.ContainsKey("SaveResult"))
+        {
+            <div class="alert alert-success fade in" role="alert">
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.GiftID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BoughtGift)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PersonID)
-        </th>
-        <th></th>
-    </tr>
+                <button type="button" class="close" data-dismiss="alert">
+                    <span>&times;</span>
+                </button>
+                @TempData["SaveResult"]
+            </div>
+        }
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.GiftID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BoughtGift)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.GiftID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.GiftID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.GiftID })
-            </td>
-        </tr>
-    }
+        <table class="table">
+            <tr>
+                <th>
+                    <b>@Html.DisplayNameFor(model => model.GiftID)</b>
+                </th>
+                <th>
+                    <b>@Html.DisplayNameFor(model => model.Description)</b>
+                </th>
+                <th>
+                    <b>@Html.DisplayNameFor(model => model.BoughtGift)</b>
+                </th>
+                <th>
+                    <b>@Html.DisplayNameFor(model => model.PersonID)</b>
+                </th>
+                <th></th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.GiftID)</b>
+                    </td>
+                    <td>
+                        <b> @Html.DisplayFor(modelItem => item.Description)</b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.BoughtGift)</b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.PersonID)</b>
+                    </td>
+                    <td>
+                        <b>@Html.ActionLink("Edit", "Edit", new { id = item.GiftID }) |</b>
+                        <b> @Html.ActionLink("Details", "Details", new { id = item.GiftID }) |</b>
+                        <b> @Html.ActionLink("Delete", "Delete", new { id = item.GiftID })</b>
+                    </td>
+                </tr>
+            }
+
+        </table>

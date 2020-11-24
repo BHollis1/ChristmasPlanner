@@ -3,11 +3,35 @@
 @{
     ViewBag.Title = "Index";
 }
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('../../Content/Images/image8.jpg');
+            margin: auto;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <style type="text/css">
+        .actionlink {
+            font-size: larger;
+            font-weight: bold;
+            color: darkred;
+        }
+        .anim {
+            animation-name: colorful;
+            animation-duration: 4s;
+        }
+        @@keyframes colorful {
+            20% {
+                transform: scale(0.5);
+            }
+             }
+    </style>
 
-<h2>Index</h2>
+<h2><b>Index</b></h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "actionlink" })
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -42,23 +66,23 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PersonID)
+                <b>@Html.DisplayFor(modelItem => item.PersonID)</b>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                <b>@Html.DisplayFor(modelItem => item.FirstName)</b>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                <b>@Html.DisplayFor(modelItem => item.LastName)</b>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FullName)
+                <b>@Html.DisplayFor(modelItem => item.FullName)</b>
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.PersonID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.PersonID }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.PersonID })
+                <b>@Html.ActionLink("Edit", "Edit", new { id = item.PersonID }) |</b>
+                <b>@Html.ActionLink("Details", "Details", new { id = item.PersonID }) |</b>
+                <b>@Html.ActionLink("Delete", "Delete", new { id = item.PersonID })</b>
             </td>
         </tr>
     }
-
+}
 </table>
