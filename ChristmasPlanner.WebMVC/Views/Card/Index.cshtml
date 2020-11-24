@@ -3,11 +3,18 @@
 @{
     ViewBag.Title = "Index";
 }
+<style type="text/css">
+    .actionlink {
+        font-size: larger;
+        font-weight: bold;
+        color: darkred;
+    }
+</style>
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create",null, new { @class = "actionlink" })
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -46,9 +53,9 @@
                 @Html.DisplayFor(modelItem => item.PersonID)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CardID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CardID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CardID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.CardID }, new { @class = "actionlink" }) <b>|</b>
+                @Html.ActionLink("Details", "Details", new { id = item.CardID }, new { @class = "actionlink" }) <b>|</b>
+                @Html.ActionLink("Delete", "Delete", new { id = item.CardID }, new { @class = "actionlink" })
             </td>
         </tr>
     }

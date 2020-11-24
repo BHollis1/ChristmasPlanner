@@ -10,9 +10,18 @@
                 font-weight: bold;
                 color: darkred;
             }
+            </style>
+        <style type="text/css">
+            .tableone {
+                font-weight: bold;
+                font-style:italic;
+                color: darkgreen;
+            }
         </style>
 
-        <h2>Index</h2>
+        <div class="tableone">
+            <h2>Index</h2>
+        </div>
 
         <p>
             @Html.ActionLink("Create New", "Create", null, new { @class = " actionlink" })
@@ -61,9 +70,9 @@
                         <b>@Html.DisplayFor(modelItem => item.PersonID)</b>
                     </td>
                     <td>
-                        <b>@Html.ActionLink("Edit", "Edit", new { id = item.GiftID }) |</b>
-                        <b> @Html.ActionLink("Details", "Details", new { id = item.GiftID }) |</b>
-                        <b> @Html.ActionLink("Delete", "Delete", new { id = item.GiftID })</b>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.GiftID }, new { @class = "actionlink" }) <b>|</b>
+                         @Html.ActionLink("Details", "Details", new { id = item.GiftID }, new { @class = "actionlink" }) <b>|</b>
+                         @Html.ActionLink("Delete", "Delete", new { id = item.GiftID }, new { @class = "actionlink" })
                     </td>
                 </tr>
             }

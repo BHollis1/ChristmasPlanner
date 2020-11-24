@@ -1,15 +1,31 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style type="text/css">
+    .jumbotron {
+        font-size: xx-large;
+        font-weight: bold;
+        font-style: italic;
+        color: darkred;
+    }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 20%;
+        text-align: center;
+        color: darkgreen;
+    }
+</style>
 
 
 <div class="jumbotron">
     <h1>Christmas Planner</h1>
     <p class="lead">A free app to help you keep organized during the holiday season.</p>
-    @Html.ActionLink("Christmas Planner", "Index", "Person", null, new { @class = "btn btn-primary btn-large " })
+    @Html.ActionLink("Learn More", "Index", "Person", null, new { @class = "btn btn-primary btn-large " })
 </div>
 
-<div class="row">
+@*<div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
@@ -28,4 +44,4 @@
         <p>Keep checking back as additional features will be added such as Birthday Feature!</p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
-</div>
+</div>*@

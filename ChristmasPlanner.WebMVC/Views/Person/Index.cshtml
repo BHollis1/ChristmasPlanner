@@ -9,6 +9,14 @@
             background-image: url('../../Content/Images/image8.jpg');
             margin: auto;
             background-repeat: no-repeat;
+            animation-name: colorful;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        @@keyframes colorful {
+            20% {
+                transform: scale(0.5);
+            }
         }
     </style>
     <style type="text/css">
@@ -17,15 +25,6 @@
             font-weight: bold;
             color: darkred;
         }
-        .anim {
-            animation-name: colorful;
-            animation-duration: 4s;
-        }
-        @@keyframes colorful {
-            20% {
-                transform: scale(0.5);
-            }
-             }
     </style>
 
 <h2><b>Index</b></h2>
@@ -78,9 +77,9 @@
                 <b>@Html.DisplayFor(modelItem => item.FullName)</b>
             </td>
             <td>
-                <b>@Html.ActionLink("Edit", "Edit", new { id = item.PersonID }) |</b>
-                <b>@Html.ActionLink("Details", "Details", new { id = item.PersonID }) |</b>
-                <b>@Html.ActionLink("Delete", "Delete", new { id = item.PersonID })</b>
+                     @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
+                     @Html.ActionLink("Details", "Details", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
+                     @Html.ActionLink("Delete", "Delete", new { id = item.PersonID }, new { @class = "actionlink" })
             </td>
         </tr>
     }
