@@ -2,6 +2,20 @@
     ViewBag.Title = "Home Page";
 }
 <style type="text/css">
+    body {
+        background-image: url('../../Content/Images/457764-best-cute-christmas-desktop-backgrounds-1920x1080-windows-10.jpg');
+        margin: auto;
+        background-repeat: no-repeat;
+      /*  animation-name: colorful;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;*/
+    }
+
+    /*@@keyframes colorful {
+        20% {
+            transform: scale(0.5);
+        }
+    }*/
     .jumbotron {
         font-size: xx-large;
         font-weight: bold;
@@ -22,7 +36,7 @@
 <div class="jumbotron">
     <h1>Christmas Planner</h1>
     <p class="lead">A free app to help you keep organized during the holiday season.</p>
-    @Html.ActionLink("Learn More", "Index", "Person", null, new { @class = "btn btn-primary btn-large " })
+    @Html.ActionLink("Learn More", "About", "Home", null, new { @class = "btn btn-primary btn-large " })
 </div>
 
 @*<div class="row">

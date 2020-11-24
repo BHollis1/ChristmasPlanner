@@ -3,21 +3,49 @@
 @{
     ViewBag.Title = "Index";
 }
+<style type="text/css">
+    body {
+        background-image: url('../../Content/Images/191383_grumpy-cat-wallpapers-desktop-backgrounds_3200x1800_h.jpg');
+        margin: auto;
+        background-repeat: no-repeat;
+        /*  animation-name: colorful;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;*/
+    }
 
-        <style type="text/css">
-            .actionlink {
-                font-size: larger;
-                font-weight: bold;
-                color: darkred;
-            }
-            </style>
-        <style type="text/css">
-            .tableone {
-                font-weight: bold;
-                font-style:italic;
-                color: darkgreen;
-            }
-        </style>
+    /*@@keyframes colorful {
+        20% {
+            transform: scale(0.5);
+        }
+    }*/
+    .jumbotron {
+        font-size: xx-large;
+        font-weight: bold;
+        font-style: italic;
+        color: darkred;
+    }
+
+    .actionlink {
+        font-style: italic;
+        font-size: larger;
+        font-weight: bold;
+        color: darkred;
+    }
+    .tableone {
+        font-weight: bold;
+        font-style: italic;
+        color: darkgreen;
+    }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 20%;
+        text-align: center;
+        color: darkgreen;
+    }
+</style>
+
 
         <div class="tableone">
             <h2>Index</h2>
@@ -40,10 +68,10 @@
         <table class="table">
             <tr>
                 <th>
-                    <b>@Html.DisplayNameFor(model => model.GiftID)</b>
+                    @Html.DisplayNameFor(model => model.GiftID)
                 </th>
                 <th>
-                    <b>@Html.DisplayNameFor(model => model.Description)</b>
+                    @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
                     <b>@Html.DisplayNameFor(model => model.BoughtGift)</b>

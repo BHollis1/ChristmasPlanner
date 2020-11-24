@@ -3,85 +3,100 @@
 @{
     ViewBag.Title = "Index";
 }
-@section head{
-    <style type="text/css">
-        body {
-            background-image: url('../../Content/Images/image8.jpg');
-            margin: auto;
-            background-repeat: no-repeat;
-            animation-name: colorful;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-        }
-        @@keyframes colorful {
-            20% {
-                transform: scale(0.5);
-            }
-        }
-    </style>
-    <style type="text/css">
-        .actionlink {
-            font-size: larger;
-            font-weight: bold;
-            color: darkred;
-        }
-    </style>
-
-<h2><b>Index</b></h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "actionlink" })
-</p>
-
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PersonID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                <b>@Html.DisplayFor(modelItem => item.PersonID)</b>
-            </td>
-            <td>
-                <b>@Html.DisplayFor(modelItem => item.FirstName)</b>
-            </td>
-            <td>
-                <b>@Html.DisplayFor(modelItem => item.LastName)</b>
-            </td>
-            <td>
-                <b>@Html.DisplayFor(modelItem => item.FullName)</b>
-            </td>
-            <td>
-                     @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
-                     @Html.ActionLink("Details", "Details", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
-                     @Html.ActionLink("Delete", "Delete", new { id = item.PersonID }, new { @class = "actionlink" })
-            </td>
-        </tr>
+<style type="text/css">
+    body {
+        background-image: url('../../Content/Images/Christmas-Snowman-Wallpaper-1920x1080.jpg');
+        margin: auto;
+        background-repeat: no-repeat;
+        /*  animation-name: colorful;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;*/
     }
-}
-</table>
+
+    /*@@keyframes colorful {
+        20% {
+            transform: scale(0.5);
+        }
+    }*/
+    .jumbotron {
+        font-size: xx-large;
+        font-weight: bold;
+        font-style: italic;
+        color: darkred;
+    }
+    .actionlink {
+        font-style:italic;
+        font-size: larger;
+        font-weight: bold;
+        color: darkred;
+    }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 20%;
+        text-align: center;
+        color: darkgreen;
+    }
+</style>
+
+
+    <h2><b>Index</b></h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "actionlink" })
+    </p>
+
+    @if (TempData.ContainsKey("SaveResult"))
+    {
+        <div class="alert alert-success fade in" role="alert">
+
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.PersonID)</b>
+                </td>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.FirstName)</b>
+                </td>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.LastName)</b>
+                </td>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.FullName)</b>
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
+                    @Html.ActionLink("Details", "Details", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PersonID }, new { @class = "actionlink" })
+                </td>
+            </tr>
+        }
+
+    </table>
+

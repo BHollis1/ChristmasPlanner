@@ -1,7 +1,46 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "About Christmas Planner";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<style type="text/css">
+    body {
+        background-image: url('../../Content/Images/Santa-Claus-1920x1080-Christmas-Image.jpg');
+        margin: auto;
+        background-repeat: no-repeat;
+        /*  animation-name: colorful;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;*/
+    }
 
-<p>Use this area to provide additional information.</p>
+    /*@@keyframes colorful {
+        20% {
+            transform: scale(0.5);
+        }
+    }*/
+    /*.jumbotron {
+        font-size: xx-large;
+        font-weight: bold;
+        font-style: italic;
+        color: darkred;
+    }*/
+    .color {
+        color: darkred;
+        font-weight: bold;
+        font-style: italic;
+        font-size: xx-large;
+    }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 20%;
+        text-align: center;
+        color: darkgreen;
+    }
+</style>
+<div class="color">
+    <h2>@ViewBag.Title</h2>
+    @*<h3>@ViewBag.Message</h3>*@
+
+    <p>Christmas Planner is an app designed to make the holiday season of gift buying and card sending less stressful.</p>
+</div>
