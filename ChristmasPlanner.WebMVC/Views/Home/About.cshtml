@@ -42,5 +42,6 @@
     <h2>@ViewBag.Title</h2>
     @*<h3>@ViewBag.Message</h3>*@
 
-    <p>Christmas Planner is an app designed to make the holiday season of gift buying and card sending less stressful.</p>
+    <p>Christmas Planner is an app designed to make the holiday season less stressful by keeping track of gift buying and card sending for you! To get started, simply enter the names of the people for whom you need to buy a gift. Click the <span style="color: darkgreen">Let's Go</span> button below to get started.</p>
+    @Html.ActionLink("Let's Go", "Index", "Person", null, new { @class = "btn btn-primary btn-large " })
 </div>
