@@ -72,5 +72,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChristmasPlanner.Data\ChristmasPlanner.Data.csproj">
+      <Project>{f0eb87ea-90c2-43e0-86b9-bbc7cb7483a4}</Project>
+      <Name>ChristmasPlanner.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChristmasPlanner.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace ChristmasPlanner.Models
         [Display(Name = "Sent Card")]
         public bool SentCard { get; set; }
         public int PersonID { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

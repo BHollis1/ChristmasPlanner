@@ -5,7 +5,8 @@
 }
 <style type="text/css">
     body {
-        background-image: url('../../Content/Images/white.snowflakes.jpg');
+        background-color:lightskyblue;
+        /*background-image: url('../../Content/Images/white.snowflakes.jpg');*/
         background-size: cover;
         /*margin: auto;
         max-width: 100%;
@@ -32,6 +33,11 @@
         font-size: larger;
         font-weight: bold;
         color: darkred;
+    }
+    .table {
+        font-weight: bold;
+        font-style:italic;
+        color: darkgreen;
     }
     .tableone {
         font-weight: bold;
@@ -76,35 +82,41 @@
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
-                    <b>@Html.DisplayNameFor(model => model.BoughtGift)</b>
+                    @Html.DisplayNameFor(model => model.BoughtGift)
                 </th>
                 <th>
-                    <b>@Html.DisplayNameFor(model => model.PersonID)</b>
+                    @Html.DisplayNameFor(model => model.Person.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonID)
                 </th>
                 <th></th>
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        <b>@Html.DisplayFor(modelItem => item.GiftID)</b>
-                    </td>
-                    <td>
-                        <b> @Html.DisplayFor(modelItem => item.Description)</b>
-                    </td>
-                    <td>
-                        <b>@Html.DisplayFor(modelItem => item.BoughtGift)</b>
-                    </td>
-                    <td>
-                        <b>@Html.DisplayFor(modelItem => item.PersonID)</b>
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.GiftID }, new { @class = "actionlink" }) <b>|</b>
-                         @Html.ActionLink("Details", "Details", new { id = item.GiftID }, new { @class = "actionlink" }) <b>|</b>
-                         @Html.ActionLink("Delete", "Delete", new { id = item.GiftID }, new { @class = "actionlink" })
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiftID)
+            </td>
+            <td>
+                 @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoughtGift)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.GiftID }, new { @class = "actionlink" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.GiftID }, new { @class = "actionlink" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.GiftID }, new { @class = "actionlink" })
+            </td>
+        </tr>
             }
 
         </table>

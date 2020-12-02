@@ -33,11 +33,11 @@
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.PersonID, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Person.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.PersonID)
-                @Html.ValidationMessageFor(model => model.PersonID, "", new { @class = "text-danger" })
+            @*<div class="checkbox">*@
+                @Html.DropDownList("PersonID", null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Person.PersonID, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
@@ -47,7 +47,6 @@
             <input type="submit" value="Create" class="btn btn-default" />
         </div>
     </div>
-</div>
 }
 
 <div>

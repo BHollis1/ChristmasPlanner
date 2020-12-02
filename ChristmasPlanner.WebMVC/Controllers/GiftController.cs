@@ -22,6 +22,8 @@ namespace ChristmasPlanner.WebMVC.Controllers
         }
         public ActionResult Create()
         {
+            var db = new PersonService();
+            ViewBag.PersonID = new SelectList(db.GetPerson().OrderBy(e => e.FullName), "PersonID", "FullName");
             return View();
         }
         [HttpPost]
@@ -63,12 +65,15 @@ namespace ChristmasPlanner.WebMVC.Controllers
         {
             var service = CreateGiftService();
             var detail = service.GetGiftByID(id);
+            var db = new PersonService();
+            ViewBag.PersonID = new SelectList(db.GetPerson().OrderBy(e => e.FullName), "PersonID", "FullName");
             var model =
                 new GiftEdit
                 {
                     GiftID = detail.GiftID,
                     Description = detail.Description,
-                    BoughtGift = detail.BoughtGift
+                    BoughtGift = detail.BoughtGift,
+                    Person = detail.Person
                 };
             return View(model);
         }
@@ -76,6 +81,8 @@ namespace ChristmasPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, GiftEdit model)
         {
+            var db = new PersonService();
+            ViewBag.PersonID = new SelectList(db.GetPerson().OrderBy(e => e.FullName), "PersonID", "FullName");
             if (!ModelState.IsValid) return View(model);
 
             if (model.GiftID != id)

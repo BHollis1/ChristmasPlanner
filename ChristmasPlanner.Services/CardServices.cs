@@ -47,7 +47,7 @@ namespace ChristmasPlanner.Services
                         {
                             CardID = e.CardID,
                             SentCard = e.SentCard,
-                            PersonID = e.PersonID
+                            Person = e.Person
                         });
                 return query.ToArray();
             }
@@ -65,7 +65,8 @@ namespace ChristmasPlanner.Services
                     {
                         CardID = entity.CardID,
                         SentCard = entity.SentCard,
-                        PersonID = entity.PersonID
+                        Person = entity.Person
+                        
                     };
             }
         }

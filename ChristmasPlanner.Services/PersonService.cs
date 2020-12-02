@@ -16,6 +16,10 @@ namespace ChristmasPlanner.Services
         {
             _userID = userID;
         }
+        public PersonService()
+        {
+
+        }
 
         public bool CreatePerson(PersonCreate model)
         {
@@ -41,7 +45,7 @@ namespace ChristmasPlanner.Services
                 var query =
                     ctx
                     .Person
-                    .Where(e => e.OwnerID == _userID)
+                    //.Where(e => e.OwnerID == _userID)
                     .Select(
                         e =>
                         new PersonListItem
@@ -62,7 +66,7 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Person
-                    .Single(e => e.PersonID == id && e.OwnerID == _userID);
+                    .Single(e => e.PersonID == id); /*&& e.OwnerID == _userID); */
                 return
                     new PersonDetail
                     {
@@ -81,7 +85,7 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Person
-                    .Single(e => e.PersonID == model.PersonID && e.OwnerID == _userID);
+                    .Single(e => e.PersonID == model.PersonID); /*&& e.OwnerID == _userID);*/
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
@@ -98,7 +102,7 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Person
-                    .Single(e => e.PersonID == personID && e.OwnerID == _userID);
+                    .Single(e => e.PersonID == personID); /*&& e.OwnerID == _userID);*/
 
                 ctx.Person.Remove(entity);
 

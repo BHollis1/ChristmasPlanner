@@ -25,7 +25,8 @@ namespace ChristmasPlanner.Services
                     OwnerID = _userID,
                     Description = model.Description,
                     BoughtGift = model.BoughtGift,
-                    PersonID = model.PersonID
+                    Person = model.Person,
+                    PersonID = model.PersonID,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -41,7 +42,7 @@ namespace ChristmasPlanner.Services
                 var query =
                     ctx
                     .Gifts
-                    .Where(e => e.OwnerID == _userID)
+                    //.Where(e => e.OwnerID == _userID)
                     .Select(
                         e =>
                         new GiftListItem
@@ -49,6 +50,7 @@ namespace ChristmasPlanner.Services
                             GiftID = e.GiftID,
                             Description = e.Description,
                             BoughtGift = e.BoughtGift,
+                            Person = e.Person,
                             PersonID = e.PersonID
                         });
                 return query.ToArray();
@@ -61,14 +63,15 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Gifts
-                    .Single(e => e.GiftID == id && e.OwnerID == _userID);
+                    .Single(e => e.GiftID == id); /*&& e.OwnerID == _userID);*/
                 return
                     new GiftDetail
                     {
                         GiftID = entity.GiftID,
                         Description = entity.Description,
                         BoughtGift = entity.BoughtGift,
-                        PersonID = entity.PersonID
+                        PersonID = entity.PersonID,
+                        Person = entity.Person
                     };
             }
         }
@@ -80,10 +83,11 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Gifts
-                    .Single(e => e.GiftID == model.GiftID && e.OwnerID == _userID);
+                    .Single(e => e.GiftID == model.GiftID); /*&& e.OwnerID == _userID);*/
 
                 entity.Description = model.Description;
                 entity.BoughtGift = model.BoughtGift;
+                entity.Person = model.Person;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -96,7 +100,7 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Gifts
-                    .Single(e => e.GiftID == giftID && e.OwnerID == _userID);
+                    .Single(e => e.GiftID == giftID); /*&& e.OwnerID == _userID);*/
 
                 ctx.Gifts.Remove(entity);
 
