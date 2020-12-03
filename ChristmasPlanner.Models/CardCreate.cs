@@ -11,7 +11,7 @@ namespace ChristmasPlanner.Models
     public class CardCreate
     {
         public bool SentCard { get; set; }
-        [Display(Name = "Person Name:")]
+        [Display(Name = "Name")]
         public int PersonID { get; set; }
         public virtual Person Person { get; set; }
     }

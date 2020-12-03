@@ -29,6 +29,7 @@
     }
 
     .actionlink {
+        text-decoration: underline;
         font-style: italic;
         font-size: larger;
         font-weight: bold;
@@ -120,3 +121,6 @@
             }
 
         </table>
+        <p>
+            @Html.ActionLink("Cards", "Index", "Card", null, new { @class = "btn btn-primary btn-large " })
+        </p>

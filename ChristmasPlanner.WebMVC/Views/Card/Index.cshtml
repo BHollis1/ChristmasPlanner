@@ -5,7 +5,7 @@
 }
 <style type="text/css">
     body {
-        background-image: url('../../Content/Images/458901-funny-christmas-desktop-backgrounds-1920x1080-large-resolution.jpg');
+        background-color: floralwhite;
         background-size: cover;
         /* margin: auto;
         background-repeat: no-repeat;
@@ -29,6 +29,7 @@
     }
 
     .actionlink {
+        text-decoration: underline;
         font-style: italic;
         font-size: larger;
         font-weight: bold;
@@ -42,6 +43,9 @@
         width: 20%;
         text-align: center;
         color: darkgreen;
+    }
+    .table {
+        font-weight: bold;
     }
 </style>
 
@@ -69,6 +73,9 @@
             @Html.DisplayNameFor(model => model.SentCard)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Person.FullName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PersonID)
         </th>
         <th></th>
@@ -76,22 +83,25 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SentCard)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CardID }, new { @class = "actionlink" }) <b>|</b>
-                @Html.ActionLink("Details", "Details", new { id = item.CardID }, new { @class = "actionlink" }) <b>|</b>
-                @Html.ActionLink("Delete", "Delete", new { id = item.CardID }, new { @class = "actionlink" })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CardID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SentCard)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Person.FullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PersonID)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CardID }, new { @class = "actionlink" }) <b>|</b>
+        @Html.ActionLink("Details", "Details", new { id = item.CardID }, new { @class = "actionlink" }) <b>|</b>
+        @Html.ActionLink("Delete", "Delete", new { id = item.CardID }, new { @class = "actionlink" })
+    </td>
+</tr>
     }
 
 </table>

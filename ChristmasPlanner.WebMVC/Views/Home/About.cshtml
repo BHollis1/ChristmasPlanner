@@ -1,9 +1,9 @@
 ﻿@{
-    ViewBag.Title = "About Christmas Planner";
+    ViewBag.Title = "Christmas Planner";
 }
 <style type="text/css">
     body {
-        background-image: url('../../Content/Images/white.snowflakes.jpg');
+        background-color: palegreen;
         background-size: cover;
         /*margin: auto;
         background-repeat: no-repeat;
@@ -43,6 +43,7 @@
     <h2>@ViewBag.Title</h2>
     @*<h3>@ViewBag.Message</h3>*@
 
-    <p>Christmas Planner is an app designed to make the holiday season less stressful by keeping track of gift buying and card sending for you! To get started, simply enter the names of the people for whom you need to buy a gift. Click the <span style="color: darkgreen">Let's Go</span> button below to get started.</p>
+<p>is an app designed to make the holiday season less stressful by keeping track of gift buying and card sending for you! You simply enter the names of everyone you need to buy a gift for OR send a card to. Then, as you buy gifts, you can enter the gift you bought OR simply check off that you have bought that person a gift OR sent that person a card. Click the 'Let's Go' button below to get started entering names!</p>
+    
     @Html.ActionLink("Let's Go", "Index", "Person", null, new { @class = "btn btn-primary btn-large " })
 </div>

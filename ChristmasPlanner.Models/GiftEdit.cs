@@ -14,7 +14,7 @@ namespace ChristmasPlanner.Models
         public string Description { get; set; }
         [Display(Name = "Bought Gift")]
         public bool BoughtGift { get; set; }
-        [Display(Name = "Name:")]
+        [Display(Name = "PersonID")]
         public int PersonID { get; set; }
         public virtual Person Person { get; set; }
     }

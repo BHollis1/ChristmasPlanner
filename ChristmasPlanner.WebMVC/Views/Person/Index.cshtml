@@ -9,18 +9,22 @@
         background-image: url('../../Content/Images/wallpaper-christmas-wallpapers-clean-abstract.jpg');
         background-size: cover;
     }
-        .jumbotron {
+
+    .jumbotron {
         font-size: xx-large;
         font-weight: bold;
         font-style: italic;
         color: white;
     }
+
     .actionlink {
-        font-style:italic;
+        text-decoration: underline;
+        font-style: italic;
         font-size: larger;
         font-weight: bold;
         color: white;
     }
+
     .table {
         color: white;
         font-weight: bold;
@@ -38,63 +42,68 @@
 
 
 
-    <h2><strong><span style="color: white;">Index</span></strong></h2>
-    
+<h3><strong><span style="color: white;">Click the 'Create New' link below to enter names</span></strong></h3>
 
-    <p>
-        @Html.ActionLink("Create New", "Create", null, new { @class = "actionlink" })
-    </p>
 
-    @if (TempData.ContainsKey("SaveResult"))
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "actionlink" })
+</p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
     {
-        <div class="alert alert-success fade in" role="alert">
-
-            <button type="button" class="close" data-dismiss="alert">
-                <span>&times;</span>
-            </button>
-            @TempData["SaveResult"]
-        </div>
-    }
-
-    <table class="table">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PersonID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th></th>
+            <td>
+                <b>@Html.DisplayFor(modelItem => item.PersonID)</b>
+            </td>
+            <td>
+                <b>@Html.DisplayFor(modelItem => item.FirstName)</b>
+            </td>
+            <td>
+                <b>@Html.DisplayFor(modelItem => item.LastName)</b>
+            </td>
+            <td>
+                <b>@Html.DisplayFor(modelItem => item.FullName)</b>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
+                @Html.ActionLink("Details", "Details", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
+                @Html.ActionLink("Delete", "Delete", new { id = item.PersonID }, new { @class = "actionlink" })
+            </td>
         </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <b>@Html.DisplayFor(modelItem => item.PersonID)</b>
-                </td>
-                <td>
-                    <b>@Html.DisplayFor(modelItem => item.FirstName)</b>
-                </td>
-                <td>
-                    <b>@Html.DisplayFor(modelItem => item.LastName)</b>
-                </td>
-                <td>
-                    <b>@Html.DisplayFor(modelItem => item.FullName)</b>
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
-                    @Html.ActionLink("Details", "Details", new { id = item.PersonID }, new { @class = "actionlink" }) <b>|</b>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.PersonID }, new { @class = "actionlink" })
-                </td>
-            </tr>
-        }
-
-    </table>
+    }
+</table>
+<p><span style="color: white;">When finished setting up names, click the 'Gifts' button below</span></p>
+<p>
+    @Html.ActionLink("Gifts", "Index", "Gift", null, new { @class = "btn btn-primary btn-large " })
+</p>
 

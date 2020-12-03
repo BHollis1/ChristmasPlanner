@@ -24,7 +24,8 @@ namespace ChristmasPlanner.Services
                 {
                     OwnerID = _userID,
                     SentCard = model.SentCard,
-                    PersonID = model.PersonID
+                    PersonID = model.PersonID,
+                    Person = model.Person
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -40,14 +41,15 @@ namespace ChristmasPlanner.Services
                 var query =
                     ctx
                     .Cards
-                    .Where(e => e.OwnerID == _userID)
+                    //.Where(e => e.OwnerID == _userID)
                     .Select(
                         e =>
                         new CardListItem
                         {
                             CardID = e.CardID,
                             SentCard = e.SentCard,
-                            Person = e.Person
+                            Person = e.Person,
+                            PersonID = e.PersonID
                         });
                 return query.ToArray();
             }
@@ -59,14 +61,15 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Cards
-                    .Single(e => e.CardID == id && e.OwnerID == _userID);
+                    .Single(e => e.CardID == id); /*&& e.OwnerID == _userID);*/
                 return
                     new CardDetail
                     {
                         CardID = entity.CardID,
                         SentCard = entity.SentCard,
-                        Person = entity.Person
-                        
+                        Person = entity.Person,
+                        PersonID = entity.PersonID
+
                     };
             }
         }
@@ -78,7 +81,7 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Cards
-                    .Single(e => e.CardID == model.CardID && e.OwnerID == _userID);
+                    .Single(e => e.CardID == model.CardID); /*&& e.OwnerID == _userID);*/
 
                 entity.SentCard = model.SentCard;
 
@@ -93,7 +96,7 @@ namespace ChristmasPlanner.Services
                 var entity =
                     ctx
                     .Cards
-                    .Single(e => e.CardID == cardID && e.OwnerID == _userID);
+                    .Single(e => e.CardID == cardID); /*&& e.OwnerID == _userID);*/
 
                 ctx.Cards.Remove(entity);
 

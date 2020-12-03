@@ -70,8 +70,8 @@ namespace ChristmasPlanner.Services
                         GiftID = entity.GiftID,
                         Description = entity.Description,
                         BoughtGift = entity.BoughtGift,
-                        PersonID = entity.PersonID,
-                        Person = entity.Person
+                        Person = entity.Person,
+                        PersonID = entity.PersonID
                     };
             }
         }

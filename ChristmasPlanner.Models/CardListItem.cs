@@ -13,7 +13,8 @@ namespace ChristmasPlanner.Models
         public int CardID { get; set; }
         [Required]
         public bool SentCard { get; set; }
-        [Required]
+        
+        [Display(Name = "PersonID")]
         public int PersonID { get; set; }
         public virtual Person Person { get; set; }
     }
