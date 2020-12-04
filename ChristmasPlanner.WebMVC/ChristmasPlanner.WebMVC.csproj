@@ -186,6 +186,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\2020-12-04 %281%29.png" />
+    <Content Include="Content\Images\2020-12-04 %282%29.png" />
+    <Content Include="Content\Images\2020-12-04.png" />
     <Content Include="Content\Images\border.jpg" />
     <Content Include="Content\Images\Ornaments.mp4" />
     <Content Include="Content\Images\Ornaments2.mp4" />
