@@ -24,7 +24,7 @@ My husband and I have 8 children. Needless to say, we start wrapping gifts at le
 
 
 ## Setup
-[](https://christmasplanner.azurewebsites.net)
+(https://christmasplanner.azurewebsites.net)
 
 ## Code Examples
 public ActionResult Create()
