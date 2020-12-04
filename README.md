@@ -15,7 +15,7 @@ My husband and I have 8 children. Needless to say, we start wrapping gifts at le
 
 
 ## Screenshots
-![](https://github.com/BHollis1/ChristmasPlanner/blob/master/ChristmasPlanner.WebMVC/Content/Images/2020-12-04%20.png)(https://github.com/BHollis1/ChristmasPlanner/blob/master/ChristmasPlanner.WebMVC/Content/Images/2020-12-04%20(1).png)(https://github.com/BHollis1/ChristmasPlanner/blob/master/ChristmasPlanner.WebMVC/Content/Images/2020-12-04%20(2).png)
+![](https://github.com/BHollis1/ChristmasPlanner/blob/master/ChristmasPlanner.WebMVC/Content/Images/2020-12-04.png)(https://github.com/BHollis1/ChristmasPlanner/blob/master/ChristmasPlanner.WebMVC/Content/Images/2020-12-04%20(1).png)(https://github.com/BHollis1/ChristmasPlanner/blob/master/ChristmasPlanner.WebMVC/Content/Images/2020-12-04%20(2).png)
 
 ## Technologies
 * Visual Studio 2019
